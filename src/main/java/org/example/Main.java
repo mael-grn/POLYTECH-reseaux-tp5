@@ -4,14 +4,17 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        System.out.println("\n\nEn tout premier lieux, remémorons nous ces douces paroles de M.Morge : \"C'est comme les témoins de Jéhovah, ça vient toujours par deux\".\n\n");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+        System.out.println("Maintenant, nous pouvons scanner les ports 21 à 80 en UDP : \n");
+
+        MonScannerUDP.scanUDPPorts(21, 80);
+
+        System.out.println("\nLe port 80 est libre, car apache utilise TCP alors que nous venons de scanner en UDP.");
+        System.out.println("Nous allons maintenant scanner les mêmes ports en TCP : \n");
+
+        MonScannerTCP.scanTCPPorts(21, 80);
+
+        System.out.println("Cette fois ci, le port 80 est occupé, comme prévu.");
     }
 }
